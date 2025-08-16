@@ -1,0 +1,3 @@
+# Ignore log files
+*.log
+others/robot_alive_cookie/captcha_validator.log
