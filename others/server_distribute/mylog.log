@@ -1,0 +1,6 @@
+nohup: ignoring input
+sh: 1: title: not found
+Traceback (most recent call last):
+  File "/root/projects/others/server_distribute/Server_Distribute_req.py", line 13, in <module>
+    from insert_influx import Influxdb
+ModuleNotFoundError: No module named 'insert_influx'
