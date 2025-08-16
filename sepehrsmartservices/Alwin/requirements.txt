@@ -1,0 +1,8 @@
+anticaptchaofficial==1.0.64
+django_environ==0.12.0
+Flask==3.1.0
+persiantools==5.2.0
+redis==5.2.1
+Requests==2.32.3
+selenium==4.32.0
+gunicorn==23.0.0

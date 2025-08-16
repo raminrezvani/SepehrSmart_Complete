@@ -1,0 +1,187 @@
+:root {
+    /* *** INPUT *** */
+    --input-color: #212529;
+    --input-background: #fff;
+    --input-border-width: 1px;
+    --input-border-color: #c1c1c7;
+    --input-border-color-focus: #929298;
+    --input-border-radius: 0.375rem;
+    /* *** BOX *** */
+    --box-shadow: rgba(0, 0, 0, 0.1) 0 0 5px 0, rgba(0, 0, 0, 0.1) 0 0 1px 0;
+    --box-title-border-color: rgba(165, 162, 153, .3);
+    --box-title-button-background: #B4B8C5;
+    --box-days-title-background: #B2AFA9;
+    --box-days-background: #CFCDC9;
+    --box-days-active-background: #A3A9B8;
+}
+
+*, ::after, ::before {
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: "Iran Yekan";
+    src: url("IRANSANSWEB.TTF");
+}
+
+body {
+    direction: rtl;
+    font-family: "Iran Yekan", serif;
+}
+
+/* *** COMMON *** */
+.c-w-100 {
+    width: 100% !important;
+}
+
+.c-position-relative {
+    position: relative;
+}
+
+.c-position-absolute {
+    position: absolute;
+}
+
+.m-0 {
+    margin: 0 !important;
+}
+
+.mx-1 {
+    margin: 0 5px;
+}
+
+/*.c-overflow-hidden {*/
+/*    overflow: hidden;*/
+/*}*/
+
+/* *** INPUT *** */
+.c-input {
+    text-align: center;
+    outline: none !important;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: var(--input-color);
+    background-color: var(--input-background);
+    background-clip: padding-box;
+    border: var(--input-border-width) solid var(--input-border-color);
+    -webkit-appearance: textfield;
+    -moz-appearance: textfield;
+    appearance: textfield;
+    border-radius: var(--input-border-radius);
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+    direction: rtl;
+}
+
+.c-input.ltr-input {
+    direction: ltr;
+}
+
+.c-input::placeholder {
+    opacity: .6;
+}
+
+.c-input:focus {
+    border-color: var(--input-border-color-focus)
+}
+
+/* *** BOX *** */
+.c-datepicker-box {
+    width: 100%;
+    min-width: 450px;
+    max-width: 500px;
+    padding: 10px;
+    background: #fff;
+    box-shadow: var(--box-shadow);
+    left: 0;
+    top: 123%;
+    border-radius: 5px;
+    z-index: 5;
+    opacity: 0;
+    transition: all 0.5s;
+}
+
+.c-datepicker-box .c-box-main {
+    transition: all .5s;
+    display: none !important;
+}
+
+.c-datepicker-box-show {
+    opacity: 1;
+}
+
+.c-datepicker-box-show .c-box-main {
+    display: block !important;
+}
+
+.c-datepicker-box-backdrop {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    z-index: 2;
+    left: 0;
+    top: 0;
+}
+
+.c-grid {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.c-box-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--box-title-border-color);
+}
+
+.c-box-title-btn {
+    border: none !important;
+    outline: 0;
+    background: var(--box-title-button-background);
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.c-button {
+    width: 35px;
+    height: 35px;
+    background: var(--box-days-background);
+    border-radius: 50%;
+    text-align: center;
+    margin: 6px auto;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 0.7;
+}
+
+.c-button.active {
+    background: var(--box-days-active-background);
+}
+
+.c-button.disable {
+    cursor: not-allowed;
+    opacity: .4;
+}
+
+.c-button-title {
+    background: var(--box-days-title-background);
+    cursor: not-allowed;
+}
+
+.c-day {
+    font-size: 12px;
+}
+
+.c-price {
+    font-size: 9px;
+}
+
+.c-grid div {
+    flex-basis: 14%;
+}

@@ -1,0 +1,28 @@
+:root{
+    --background: #fafafa;
+}
+
+@font-face {
+    font-family: "IRANSANS";
+    src: url("./datepicker/IRANSANSWEB.TTF");
+}
+
+body {
+    font-family: "IRANSANS", serif;
+    margin: 0;
+    padding: 0;
+    direction: rtl !important;
+    background: var(--background);
+}
+
+h1, h2, h3, h4, h5, h6, p {
+    margin: 0 !important;
+}
+
+.top-10{
+    top: 10px;
+}
+
+.bg-white{
+    background: var(--background) !important;
+}

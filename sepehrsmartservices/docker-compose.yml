@@ -1,0 +1,116 @@
+version: "3.8"
+
+services:
+  eghamat24:
+    build:
+      context: ./Eghamat24
+      dockerfile: Dockerfile
+    # image: sepehrsmartservices-eghamat24:latest
+    ports:
+      - "8022:8022"
+    deploy:
+      replicas: 1
+      restart_policy:
+        condition: on-failure
+
+  booking:
+    build:
+      context: ./Booking
+      dockerfile: Dockerfile
+    # image: sepehrsmartservices-booking:latest
+    ports:
+      - "3040:3040"
+      - "5001:5001"
+    deploy:
+      replicas: 1
+      restart_policy:
+        condition: on-failure
+
+  jimbo:
+    build:
+      context: ./Jimbo
+      dockerfile: Dockerfile
+    # image: sepehrsmartservices-jimbo:latest
+    ports:
+      - "3030:3030"
+      - "5021:5021"
+    deploy:
+      replicas: 1
+      restart_policy:
+        condition: on-failure
+  
+  snapp:
+    build:
+      context: ./Snapp
+      dockerfile: Dockerfile
+    # image: sepehrsmartservices-snapp:latest
+    ports:
+      - "5004:5004"
+    deploy:
+      replicas: 1
+      restart_policy:
+        condition: on-failure
+
+  alaedin:
+    build:
+      context: ./Alaedin
+      dockerfile: Dockerfile
+    # image: sepehrsmartservices-alaedin:latest
+    ports:
+      - "5003:5003"
+    deploy:
+      replicas: 1
+      restart_policy:
+        condition: on-failure
+
+  sepehr:
+    build:
+      context: ./Sepehr
+      dockerfile: Dockerfile
+    # image: sepehrsmartservices-sepehr:latest
+    ports:
+      - "5000:5000"
+    deploy:
+      replicas: 1
+      restart_policy:
+        condition: on-failure
+
+  deltaban:
+    build:
+      context: ./Deltaban
+      dockerfile: Dockerfile
+    # image: sepehrsmartservices-deltaban:latest
+    ports:
+      - "5002:5002"
+    deploy:
+      replicas: 1
+      restart_policy:
+        condition: on-failure
+
+  alwin:
+    build:
+      context: ./Alwin
+      dockerfile: Dockerfile
+    # image: sepehrsmartservices-alwin:latest
+    ports:
+      - "5055:5055"
+    deploy:
+      replicas: 1
+      restart_policy:
+        condition: on-failure
+
+  dist_reqs:
+    build:
+      context: ./dist-requests
+      dockerfile: Dockerfile
+    ports:
+      - "6000:6000"
+      - "6001:6001"
+      - "6002:6002"
+      - "6003:6003"
+      - "6004:6004"
+      - "6005:6005"
+    # volumes:
+    #   - ./:/app
+    restart: unless-stopped
+    # network_mode: host

@@ -1,0 +1,39 @@
+version: "3.9"
+
+services:
+  django:
+    build: .
+    # container_name: django_app
+    # image: sepehrsmart-django:latest
+    ports:
+      - "8000:8000"
+    # depends_on:
+    #   - sqlite
+    #   - redis
+    # volumes:
+    #   - .:/app
+    #   - sqlite_data:/app/db  # Mount SQLite data
+    # environment:
+    #   - REDIS_HOST=redis
+    #   - DATABASE_PATH=/app/db/db.sqlite3
+    deploy:
+      replicas: 1
+      restart_policy:
+        condition: any
+
+#   redis:
+#     image: redis:latest
+#     container_name: redis_server
+#     ports:
+#       - "6379:6379"
+
+#   sqlite:
+#     image: alpine:latest
+#     container_name: sqlite_server
+#     volumes:
+#       - sqlite_data:/db  # Shared volume for SQLite
+#     command: sh -c "echo 'SQLite is ready'; sleep infinity"
+
+# volumes:
+#   sqlite_data:
+
